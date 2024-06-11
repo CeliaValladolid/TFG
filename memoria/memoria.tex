@@ -1,0 +1,273 @@
+\documentclass[a4paper,12pt,twoside]{memoir}
+
+% Castellano
+\usepackage[spanish,es-tabla]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Scalable font
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage[numbers]{natbib}
+\usepackage{url}
+
+
+\RequirePackage{booktabs}
+\RequirePackage[table]{xcolor}
+\RequirePackage{xtab}
+\RequirePackage{multirow}
+
+% Links
+\PassOptionsToPackage{hyphens}{url}\usepackage[colorlinks]{hyperref}
+\hypersetup{
+	allcolors = {red}
+}
+
+% Ecuaciones
+\usepackage{amsmath}
+
+% Rutas de fichero / paquete
+\newcommand{\ruta}[1]{{\sffamily #1}}
+
+% Párrafos
+\nonzeroparskip
+
+% Huérfanas y viudas
+\widowpenalty100000
+\clubpenalty100000
+
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+
+% Imágenes
+
+% Comando para insertar una imagen en un lugar concreto.
+% Los parámetros son:
+% 1 --> Ruta absoluta/relativa de la figura
+% 2 --> Texto a pie de figura
+% 3 --> Tamaño en tanto por uno relativo al ancho de página
+\usepackage{graphicx}
+
+\newcommand{\imagen}[3]{
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=#3\textwidth]{#1}
+		\caption{#2}\label{fig:#1}
+	\end{figure}
+	\FloatBarrier
+}
+
+
+
+
+
+
+
+\graphicspath{ {./img/} }
+
+% Capítulos
+\chapterstyle{bianchi}
+\newcommand{\capitulo}[2]{
+	\setcounter{chapter}{#1}
+	\setcounter{section}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\chapter*{#2}
+	\addcontentsline{toc}{chapter}{#2}
+	\markboth{#2}{#2}
+}
+
+% Apéndices
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand*\cftappendixname{\appendixname}
+
+\newcommand{\apendice}[1]{
+	%\renewcommand{\thechapter}{A}
+	\chapter{#1}
+}
+
+\renewcommand*\cftappendixname{\appendixname\ }
+
+% Formato de portada
+
+\makeatletter
+\usepackage{xcolor}
+\newcommand{\tutor}[1]{\def\@tutor{#1}}
+\newcommand{\tutorb}[1]{\def\@tutorb{#1}}
+
+\newcommand{\course}[1]{\def\@course{#1}}
+\definecolor{cpardoBox}{HTML}{E6E6FF}
+\def\maketitle{
+  \null
+  \thispagestyle{empty}
+  % Cabecera ----------------
+\begin{center}
+  \noindent\includegraphics[width=\textwidth]{cabeceraSalud}\vspace{1.5cm}%
+\end{center}
+  
+  % Título proyecto y escudo salud ----------------
+  \begin{center}
+    \begin{minipage}[c][1.5cm][c]{.20\textwidth}
+        \includegraphics[width=\textwidth]{escudoSalud.pdf}
+    \end{minipage}
+  \end{center}
+  
+  \begin{center}
+    \colorbox{cpardoBox}{%
+        \begin{minipage}{.8\textwidth}
+          \vspace{.5cm}\Large
+          \begin{center}
+          \textbf{TFG del Grado en Ingeniería de la Salud}\vspace{.6cm}\\
+          \textbf{\LARGE\@title{}}
+          \end{center}
+          \vspace{.2cm}
+        \end{minipage}
+    }%
+  \end{center}
+  
+    % Datos de alumno, curso y tutores ------------------
+  \begin{center}%
+  {%
+    \noindent\LARGE
+    Presentado por \@author{}\\ 
+    en Universidad de Burgos\\
+    \vspace{0.5cm}
+    \noindent\Large
+    \@date{}\\
+    \vspace{0.5cm}
+    %Tutor: \@tutor{}\\ % comenta el que no corresponda
+    Tutores: \@tutor{} -- \@tutorb{}\\
+  }%
+  \end{center}%
+  \null
+  \cleardoublepage
+  }
+\makeatother
+
+\newcommand{\nombre}{Celia Valladolid Portal}
+\newcommand{\nombreTutor}{Guirguis Zaki Guirguis Abdelmessih} 
+%\newcommand{\nombreTutorb}{Tutor 2} 
+\newcommand{\dni}{71565695E} 
+
+% Datos de portada
+\title{Desarrollo de una derivación ventriculoperitoneal con sensor de presión intracraneal para tratar la hidrocefalia}
+\author{\nombre}
+\tutor{\nombreTutor}
+%\tutorb{\nombreTutorb}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+
+\newpage\null\thispagestyle{empty}\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+
+\noindent\includegraphics[width=\textwidth]{cabeceraSalud}\vspace{1cm}
+
+\noindent D. \nombreTutor, profesor del departamento de Ingeniería Electromecánica, área de Tecnología Electrónica.
+
+\noindent Expone:
+
+\noindent Que el alumno D. \nombre, con DNI \dni, ha realizado el Trabajo final de Grado en Ingeniería de la Salud titulado Desarrollo de una derivación ventriculoperitoneal con sensor de presión intracraneal para tratar la hidrocefalia. 
+
+\noindent Y que dicho trabajo ha sido realizado por el alumno bajo la dirección del que suscribe, en virtud de lo cual se autoriza su presentación y defensa.
+
+\begin{center} %\large
+En Burgos, {\large \today}
+\end{center}
+
+\vfill\vfill\vfill
+
+% Author and supervisor
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} %\large
+Vº. Bº. del Tutor:\\[2cm]
+D. \nombreTutor
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} %\large
+%Vº. Bº. del Tutor:\\[2cm]
+%D. \nombreTutorb
+\end{flushleft}
+\end{minipage}
+\hfill
+
+\vfill
+
+% para casos con solo un tutor comentar lo anterior
+% y descomentar lo siguiente
+%Vº. Bº. del Tutor:\\[2cm]
+%D. nombre tutor
+
+
+\newpage\null\thispagestyle{empty}\newpage
+
+
+
+
+\frontmatter
+
+% Abstract en castellano
+\renewcommand*\abstractname{Resumen}
+\begin{abstract}
+Lo más importante para desarrollar un proyecto es tener una idea y a partir de ahí trabajar en ella teniendo un propósito. La idea de este proyecto surge durante mi estancia de prácticas en el Hospital Universitario de Burgos, concretamente durante mi rotación por el servicio de Neurocirugía. Tras haber finalizado la revisión de una válvula ventriculoperitoneal a un paciente con hidrocefalia, el neurocirujano encargado de llevar a cabo la operación mencionó tanto la importancia como la falta de telemetría en el campo de la neurocirugía y ahí fue cuando esta idea comenzó a coger forma. Actualmente en el mercado no hay un dispositivo que cumpla con la idea de este proyecto, controlar la apertura de la válvula a través de un sensor de presión intracraneal, todos ellos se programan de forma manual mediante herramientas magnéticas y por lo tanto no tienen la posibilidad de monitorear de forma continua, remota y en tiempo real al paciente. En este proyecto se ha simulado la funcionalidad de la válvula haciendo uso de diferentes componentes electrónicos. La mini bomba empleada sería la válvula, encargada de dejar pasar un fluido en función de las lecturas previas que realice el sensor de presión. El desarrollo de una aplicación móvil que permita el monitoreo se ha planteado como una mejora futura aunque es un aspecto clave en este dispositivo.
+\end{abstract}
+
+\renewcommand*\abstractname{Descriptores}
+\begin{abstract}
+Neurocirugía, válvula ventriculoperitoneal, hidrocefalia, telemetría, dispositivo, sensor de presión intracraneal, componentes electrónicos, mini bomba, monitorizar, mejora, aplicación móvil.
+\end{abstract}
+
+\clearpage
+
+% Abstract en inglés
+\renewcommand*\abstractname{Abstract}
+\begin{abstract}
+The most important thing to develop a project is to have an idea and then work on it with a purpose. The idea for this project arose during my internship at the University Hospital of Burgos, specifically during my rotation in the Neurosurgery Department. After having completed the revision of a ventriculoperitoneal valve in a patient with hydrocephalus, the neurosurgeon in charge of performing the operation mentioned both the importance and the lack of telemetry in the field of neurosurgery and that is when this idea began to take shape. Currently there is no device on the market that fulfils the idea of this project, to control the opening of the valve through an intracranial pressure sensor, all of them are programmed manually by means of magnetic tools and therefore do not have the possibility of continuous, remote and real-time monitoring of the patient. In this project, the functionality of the valve has been simulated using different electronic components. The mini pump used would be the valve, in charge of letting a fluid through depending on the previous readings taken by the pressure sensor. The development of a mobile application that allows monitoring has been considered as a future improvement, although it is a key aspect of this device.
+\end{abstract}
+
+\renewcommand*\abstractname{Keywords}
+\begin{abstract}
+Neurosurgery, ventriculoperitoneal valve, hydrocephalus, telemetry, device, intracranial pressure sensor, electronic components, mini pump, monitoring, improvement, mobile application.
+\end{abstract}
+
+\clearpage
+
+% Indices
+\tableofcontents
+
+\clearpage
+
+\listoffigures
+
+\clearpage
+
+\listoftables
+\clearpage
+
+
+\mainmatter
+\include{./tex/1_objetivos}
+\include{./tex/2_abreviaturas}
+\include{./tex/3_introduccion}
+\include{./tex/4_metodologia}
+\include{./tex/5_conclusiones}
+\include{./tex/6_lineas_futuras}
+
+
+%\bibliographystyle{apalike}
+\bibliographystyle{unsrt}
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{plainnat}
+\bibliography{bibliografia/bibliografia}
+\end{document}

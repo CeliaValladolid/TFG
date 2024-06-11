@@ -1,0 +1,19 @@
+\apendice{Descripción de adquisición y tratamiento de datos}
+
+
+\section{Descripción formal de los datos}
+Para la elaboración de este proyecto no se han empleado datos de fuentes externas tales como bases de datos científicas u otro tipo de fuente. Se han creado dos tipos de datos, personales y lecturas del sensor.
+
+En cuanto a los datos personales, al inicializar el programa es necesario completar los siguientes campos para que el sensor comience a funcionar:
+\begin{itemize}
+    \item \textbf{Nombre completo}: variable de tipo \textit{String} que almacena el nombre completo del usuario.
+    \item \textbf{Año de nacimiento}: variable de tipo \textit{int} que almacena el año de nacimiento del usuario. Debe ser mayor de edad para poder continuar.
+    \item \textbf{Usuario}: variable de tipo \textit{String} que almacena el nombre de usuario. Para que sea fácil de recordar, el usuario será el DNI sin letra.
+    \item \textbf{Contraseña}: variable de tipo \textit{String} que almacena la contraseña del usuario. Debe ser de una longitud de 8 caracteres y una vez ingresada se transformará en asteriscos (\textbf{*}) por temas de confidencialidad.
+\end{itemize}
+
+En total son 4 datos personales por cada usuario, nombre completo, año de nacimiento, usuario y contraseña, que serán empleados para acceder al sistema. Una vez ingresados, el sensor comenzará a realizar lecturas de los valores y cambios de presión. Ese sería el último tipo de dato generado por este programa.
+
+En el futuro, con el desarrollo de la aplicación, se puede proceder a completar el perfil de cada usuario, incluyendo datos como el nº de historia clínica y cualquier dato que sea relevante para contar con toda la información posible del paciente.
+
+Todos estos datos estarán debidamente protegidos en base a la legislación vigente del momento, recogida en el \textit{Anexo A, Viabilidad legal}.

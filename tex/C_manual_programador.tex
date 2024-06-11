@@ -1,0 +1,60 @@
+\apendice{Manual del programador} 
+
+\section{Estructura de directorios}
+La estructura de directorias seguida para este proyecto, está disponible en el repositorio de GitHub.
+
+Se ha decidido optar por la siguiente estructura:
+\begin{itemize} 
+    \item \textbf{Carpeta img}: en esta carpeta se incluyen todas la imágenes empleadas en el proyecto, tanto para la memoria como para los anexos.
+    \item \textbf{Carpeta tex}: esta carpeta está compuesta por 14 documentos LaTex (\textbf{.tex}) y 1 documento \textbf{.txt}.
+    \begin{itemize}
+        \item \textbf{1\_objetivos.tex}: documento que contiene la información acerca de los objetivos del proyecto, objetivo general y objetivos específicos. 
+        \item \textbf{2\_abreviaturas.tex}: documento que contiene las abreviaturas y siglas empleadas en el proyecto.
+        \item \textbf{3\_introduccion.tex}: documento que contiene los conceptos teóricos acerca de la hidrocefalia y estado del arte y trabajos relacionados.
+        \item \textbf{4\_metodologia.tex}: documento que contiene la información relativa a los datos del proyecto y técnicas y herramientas empleadas para su desarrollo.
+        \item \textbf{5\_conclusiones.tex}: documento que contiene los resultados, discusión y aspectos relevantes del proyecto.
+        \item \textbf{6\_lineas\_futuras.tex}: documento que contiene información acerca de futuras mejoras del proyecto e indicaciones  e ideas sugeridas para ello.
+        \item \textbf{A\_planificacion.tex}: documento que contiene la planificación del proyecto tanto temporal como económica y la viabilidad legal.
+        \item \textbf{B\_manual\_usuario.tex}: documento que contiene los requisitos de software y hardware así como demostraciones del prototipo.
+        \item \textbf{C\_manual\_programador.tex}: documento que contiene la estructura de directorios e instrucciones para mejoras o modificaciones futuras del proyecto.
+        \item \textbf{D\_datos.tex}: documento que contiene todo lo referente a la adquisición y tratamiento de datos.
+        \item \textbf{E\_diseno.tex}: documento que contiene la información referente al diseño del prototipo.
+        \item \textbf{F\_requisitos.tex}: documento que contiene diagramas de casos de uso junto con su explicación.
+        \item \textbf{G\_experimental.tex}: documento que contiene el cuaderno de trabajo con la explicación de los resultados tanto positivos como negativos.
+        \item \textbf{H\_ODS.tex}: documento que contiene una reflexión personal acerca de los aspectos de sostenibilidad que se abordan en el proyecto.
+        \item \textbf{readme.txt}: documento que contiene todas las fuentes latex para memoria y anexos.
+    \end{itemize}
+    \item \textbf{Carpeta memoria}: esta carpeta contiene dos archivos \textbf{.pdf} y \textbf{.tex} referentes a la memoria del proyecto.
+    \begin{itemize}
+        \item \textbf{memoria.pdf}: documento pdf que contiene la memoria del proyecto.
+        \item \textbf{memoria.tex}: documento LaTex que contiene la estructura de la memoria del proyecto.
+    \end{itemize}
+    \item \textbf{Carpeta anexos}: esta carpeta contiene dos archivos \textbf{.pdf} y \textbf{.tex} referentes a los anexos del proyecto.
+    \begin{itemize}
+        \item \textbf{anexos.pdf}: documento pdf que contiene los anexos del proyecto.
+        \item \textbf{anexos.tex}: documento LaTex que contiene la estructura de los anexos del proyecto.
+    \end{itemize}
+    \item \textbf{Carpeta bibliografia}: esta carpeta contiene dos archivos \textbf{.bib} referentes a la bibliografía del proyecto.
+    \begin{itemize}
+        \item \textbf{bibliografia.bib}: documento que contiene la bibliografía empleada en la memoria del proyecto.
+        \item \textbf{bibliografiaAnexos.bib}: documento que contiene la bibliografía empleada en los anexos del proyecto.
+    \end{itemize}
+    \item \textbf{Carpeta arduino}: carpeta que contiene documentos \textbf{.ino} correspondientes a las pruebas realizadas y al programa completo del proyecto.
+    \begin{itemize}
+        \item \textbf{rele.ino}: documento que contiene el programa para probar la funcionalidad del relé.
+        \item \textbf{sensor.ino}: documento que contiene el programa para probar la funcionalidad del sensor.
+        \item \textbf{code-sensor.ino}: documento que contiene el programa completo del proyecto.
+    \end{itemize}
+    \item \textbf{Carpeta demostraciones}: carpeta que contiene tres vídeos para demostrar la funcionalidad (1) del relé, (2) del sensor y (3) del circuito completo.
+    \item \textbf{datasheetMPX5010dp.pdf}: documento pdf correspondiente al datasheet del sensor empleado.
+    \item \textbf{README.md}: documento de presentación del repositorio.
+\end{itemize}
+
+
+\section{Instrucciones para la modificación o mejora del proyecto.}
+
+En primer lugar, sería interesante poder contar con un sensor que se pueda sumergir por completo en el agua, pudiendo realizar mediciones mucho más precisas y contar con más libertad a la hora de su manejo, evitando usar mangueras u otros utensilios para llevarlo a cabo. Estos sensores deberán contar con un encapsulado hermético para evitar la entrada de fluidos que puedan dañar el circuito.
+
+Una mejora notable del proyecto sería la construcción de una maqueta del cráneo del paciente. Esto se podría realizar a través de una impresora 3D, simulando tanto el cráneo como el cerebro y consiguiendo generar una presión similar a la que sufre la cabeza de un paciente con hidrocefalia. De esta forma podríamos conseguir una demostración mucho más real, intentando generar presiones similares que pudiesen ser detectadas por el sensor. Debido a que en este futuro prototipo el sensor iría alojado en el interior de esta maqueta, es indispensable que fuese sumergible para su correcto funcionamiento.
+
+Por último, el desarrollo de una aplicación. Conseguir volcar los datos generados por el sensor en un servidor en la nube que sea accesible a través de una aplicación para posteriormente poder analizarlos. Sería ideal lograr una comunicación y transmisión de datos inalámbrica, ya que si en un futuro este dispositivo ve la luz y es posible implantarlo en pacientes, es importante velar por su comodidad, estando liberados de cables que pueden limitar su libertad de movimiento.
