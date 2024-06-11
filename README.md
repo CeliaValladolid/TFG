@@ -32,7 +32,7 @@ Los contenidos de este repositorio son los siguientes:
   - bibliografia.bib: documento que contiene la bibliografía empleada en la memoria del proyecto.
   - bibliografiaAnexos.bib: documento que contiene la bibliografía empleada en los anexos del proyecto.
 - **Carpeta arduino**: carpeta que contiene el documento **.ino** correspondiente al programa del proyecto.
--  **Carpeta demostraciones**: carpeta que contiene un vídeo para demostrar la funcionalidad del proyecto.
+-  **Carpeta demostraciones**: carpeta que contiene tres vídeos para demostrar la funcionalidad (1) del relé, (2) del sensor y (3) del circuito completo.
 - **datasheetMPX5010dp.pdf**: documento pdf correspondiente al datasheet del sensor empleado.
 - **README.md**: documento de presentación del repositorio.
 
